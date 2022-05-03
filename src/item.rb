@@ -18,5 +18,3 @@ class Item
     return true if @publish_date.year < Time.new.year - 10
   end
 end
-
-
