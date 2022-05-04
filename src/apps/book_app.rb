@@ -1,8 +1,8 @@
 require './classes/book'
-require './store_data/preserve_data'
+require './store_data'
 
 module AppBook
-  include PreserveData
+  include Data
 
   def inp(array)
     array_inputs = []
@@ -14,7 +14,7 @@ module AppBook
   end
 
   def list_all_books
-    books = load_data('book')
+    books = load_data('books')
     puts('No Books Avalibale') if books.empty?
     books.each_with_index do |book, index|
       puts(
@@ -26,15 +26,17 @@ module AppBook
 
   def add_book
     input = inp(%w[Publisher Cover-State Publish-Date])
+    stored_books = fetch_data('books')
     book = Book.new(input[0], input[1], input[2])
     book_obj = { publisher: book.publisher, cover_state: book.cover_state, publish_date: book.publish_date }
-    update_data('book', book_obj)
     add_label
+    stored_books.push(book_data)
+    update_data('books', stored_books)
     puts('Book created Successfully')
   end
 
   def list_all_labels
-    labels = load_data('label')
+    labels = load_data('labels')
     puts('No Labels Avalibale') if labels.empty?
     labels.each_with_index do |label, index|
       puts(
@@ -45,9 +47,11 @@ module AppBook
 
   def add_label
     input = inp(['Label Title', 'Label Color'])
+    stored_label = fetch_data('labels')
     label = Label.new(input[0], input[1])
     label_obj = { title: label.title, color: label.color }
-    update_data('label', label_obj)
+    stored_label.push(label_obj)
+    update_data('labels', stored_label)
     puts('Label created Successfully')
   end
 end

@@ -10,7 +10,7 @@ module Data
   end
 
   def update_data(file, data)
-    options = {
+    opts = {
       rray_nl: "\n",
       object_nl: "\n",
       indent: '  ',
@@ -18,17 +18,19 @@ module Data
       space: ' '
     }
 
-    data_format = JSON.generate(data, options)
-    File.write("./preserve_data/#{file}.json", json_data)
+    data_format = JSON.generate(data, opts)
+    File.write("./preserve_data/#{file}.json", data_format)
   end
 
-  def render_data
-    path = "./preserve_data/#{file}.json"
-    if File.exist?(path)
-      File.write(path, '[]') if File.empty?(path)
-      JSON.parse(File.read(path))
-    else
-      []
+  def render_book
+    fetch_data('books').map do |book|
+      Book.new(book['publisher'], book['cover_state'], book['name'], book['published_date'])
+    end
+  end
+
+  def render_label
+    fetch_data('labels').map do |label|
+      Label.new(label[:title], label[:color])
     end
   end
 end
