@@ -1,5 +1,3 @@
-require './src/game'
-require './src/item'
 require './src/author'
 
 describe Author do
