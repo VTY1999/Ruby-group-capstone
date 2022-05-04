@@ -13,5 +13,4 @@ class Author
     @items << item
     item.label = self
   end
-
 end
