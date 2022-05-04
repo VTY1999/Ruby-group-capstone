@@ -1,4 +1,8 @@
+require_relative './src/apps/book_app'
+
 class Main
+  include AppBook
+
   def list_of_options
     puts
     puts '1 - List all books'
@@ -13,8 +17,47 @@ class Main
     puts '10 - Add a music album'
     puts '11 - Add a movie'
     puts '12 - Add a game'
-    '13 - Exit'
+    puts '13 - Exit'
   end
+
+  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
+
+  def entry_console(number)
+    case number
+    when 1
+      list_all_books
+    when 2
+      list_all_movies
+    when 3
+      list_all_muics_albums
+    when 4
+      list_of_games
+    when 5
+      list_all_genres
+    when 6
+      list_all_labels
+    when 7
+      list_all_authors
+    when 8
+      list_all_sources
+    when 9
+      add_book
+    when 10
+      add_music_album
+    when 11
+      add_movie
+    when 12
+      add_game
+    when 13
+      exit
+    end
+  end
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/MethodLength
 end
 
-Main.new.list_of_options
+loop do
+  app = Main.new
+  app.list_of_options
+  x = gets.chomp.to_i
+  app.entry_console(x)
+end
