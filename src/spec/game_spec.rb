@@ -25,7 +25,7 @@ describe Game do
     before(:each) do
       @game1 = Game.new('Killer bean', Time.new(2001, 1, 11), true, Time.new(2000, 1, 11))
       @game2 = Game.new('Mario', Time.new(2018, 1, 11), true, Time.new(2017, 1, 11))
-      @game3 = Game.new('Super Mario 2', Time.new(2004, 1, 11), true, Time.new(2020, 1, 11))
+      @game3 = Game.new('Super Mario Bros', Time.new(2004, 1, 11), true, Time.new(2020, 1, 11))
       @author1 = Author.new('Mark', 'K')
       @author2 = Author.new('Mario', 'Kennedy')
       @game1.author = @author1
