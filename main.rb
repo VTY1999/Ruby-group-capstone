@@ -20,6 +20,8 @@ class Main
     puts '13 - Exit'
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
+
   def entry_console(number)
     case number
     when 1
@@ -50,6 +52,7 @@ class Main
       exit
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/MethodLength
 end
 
 loop do
