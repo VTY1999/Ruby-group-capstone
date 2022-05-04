@@ -1,13 +1,14 @@
-class Game
+require './src/item'
+
+class Game < Item
   attr_accessor :multiplayer, :last_played_at
 
-  # rubocop:disable Metrics/ParameterLists
-  def initialize(name:, publish_date:, multiplayer:, last_played_at:, id: Random.rand(1...1000), archived: false)
-    super(name: name, publish_date: publish_date, id: id, archived: archived)
+  def initialize(name, publish_date, multiplayer, last_played_at)
+    super(name, publish_date)
+    @id = Random.rand(1...1000)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
   end
-  # rubocop:enable Metrics/ParameterLists
 
   private
 
