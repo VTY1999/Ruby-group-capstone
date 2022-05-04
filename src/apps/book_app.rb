@@ -1,5 +1,6 @@
-require './classes/book'
-require './store_data'
+require_relative '../book'
+require_relative '../label'
+require_relative './store_data'
 
 module AppBook
   include Data
@@ -14,8 +15,8 @@ module AppBook
   end
 
   def list_all_books
-    books = load_data('books')
-    puts('No Books Avalibale') if books.empty?
+    books = render_book
+    puts('There is no book yet') if books.empty?
     books.each_with_index do |book, index|
       puts(
         "#{index + 1}) Publisher: #{book['publisher']},
@@ -36,8 +37,8 @@ module AppBook
   end
 
   def list_all_labels
-    labels = load_data('labels')
-    puts('No Labels Avalibale') if labels.empty?
+    labels = render_label
+    puts('There is no lable yet') if labels.empty?
     labels.each_with_index do |label, index|
       puts(
         "#{index + 1}) Title: #{label['title']}, Color: #{label['color']}"

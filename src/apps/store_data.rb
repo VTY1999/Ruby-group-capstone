@@ -2,10 +2,10 @@ require 'json'
 
 module Data
   def fetch_data(file)
-    path = "./preserve_data/#{file}.json"
-    File.new(path, w+) unless File.exist?(path)
+    path = "./data/#{file}.json"
+    File.new(path, 'w+') unless File.exist?(path)
     File.write(path, []) if File.empty?(path)
-    elements = fIle.read(path)
+    elements = File.read(path)
     JSON.parse(elements)
   end
 
@@ -19,7 +19,7 @@ module Data
     }
 
     data_format = JSON.generate(data, opts)
-    File.write("./preserve_data/#{file}.json", data_format)
+    File.write("./data/#{file}.json", data_format)
   end
 
   def render_book
