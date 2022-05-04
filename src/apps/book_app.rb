@@ -15,7 +15,7 @@ module AppBook
   end
 
   def list_all_books
-    books = render_book
+    books = render_book('books')
     puts('There is no book yet') if books.empty?
     books.each_with_index do |book, index|
       puts(
@@ -26,18 +26,18 @@ module AppBook
   end
 
   def add_book
-    input = inp(%w[Publisher Cover-State Publish-Date])
     stored_books = fetch_data('books')
+    input = inp(%w[Publisher Cover-State Publish-Date])
     book = Book.new(input[0], input[1], input[2])
     book_obj = { publisher: book.publisher, cover_state: book.cover_state, publish_date: book.publish_date }
     add_label
-    stored_books.push(book_data)
+    stored_books.push(book_obj)
     update_data('books', stored_books)
     puts('Book created Successfully')
   end
 
   def list_all_labels
-    labels = render_label
+    labels = render_book('labels')
     puts('There is no lable yet') if labels.empty?
     labels.each_with_index do |label, index|
       puts(
