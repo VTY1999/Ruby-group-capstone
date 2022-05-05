@@ -1,0 +1,38 @@
+[
+  {
+    "id": 334,
+    "name": "Killer bean",
+    "date":  979167600,
+    "multiplayer": true,
+    "last_played_at":  947545200,
+    "archived": false,
+    "author_id": 800
+  },
+  {
+    "id": 552,
+    "name": "Mario",
+    "date":  1515625200,
+    "multiplayer": true,
+    "last_played_at":  1484089200,
+    "archived": false,
+    "author_id": 1999
+  },
+  {
+    "id": 445,
+    "name": "Super Mario Bros.",
+    "date":  979167600,
+    "multiplayer": true,
+    "last_played_at":  947545200,
+    "archived": false,
+    "author_id": 800
+  },
+  {
+    "id": 777,
+    "name": "Super Mario Bros. 2",
+    "date":  1073775600,
+    "multiplayer": true,
+    "last_played_at": 1578697200,
+    "archived": false,
+    "author_id": 1999
+  }
+]
