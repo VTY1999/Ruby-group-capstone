@@ -3,7 +3,7 @@ require_relative '../src/item'
 
 describe Book do
   before(:each) do
-    @book = Book.new('Monalisa','Kandy', 'bad', '2020-12-03')
+    @book = Book.new('Monalisa', 'Kandy', 'bad', '2020-12-03')
   end
 
   context 'while testing the Book class hierarchy' do

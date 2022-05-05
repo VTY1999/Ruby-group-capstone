@@ -1,6 +1,6 @@
 require_relative '../book'
 require_relative '../label'
-require_relative './store_data'
+require_relative '../../data/books/data_crud'
 
 module AppBook
   include Data

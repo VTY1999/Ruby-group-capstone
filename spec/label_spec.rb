@@ -6,7 +6,7 @@ describe Item do
     @label = Label.new('Book', 'green')
   end
 
-  context 'test Label class and its methods'do
+  context 'test Label class and its methods' do
     it 'check if @label is an instance of class Label' do
       expect(@label).to be_an_instance_of(Label)
     end
