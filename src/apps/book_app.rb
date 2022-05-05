@@ -19,7 +19,7 @@ module AppBook
     puts('There is no book yet') if books.empty?
     books.each_with_index do |book, index|
       puts(
-        "#{index + 1}) Publisher: #{book['publisher']},
+        "#{index + 1}) Name: #{book['name']}, Publisher: #{book['publisher']},
         Cover_state: #{book['cover_state']}, Publish_date: #{book['publish_date']}"
       )
     end
@@ -27,9 +27,14 @@ module AppBook
 
   def add_book
     stored_books = fetch_data('books')
-    input = inp(%w[Publisher Cover-State Publish-Date])
-    book = Book.new(input[0], input[1], input[2])
-    book_obj = { publisher: book.publisher, cover_state: book.cover_state, publish_date: book.publish_date }
+    input = inp(%w[Name Publisher Cover-State Publish-Date])
+    book = Book.new(input[0], input[1], input[2], input[2])
+    book_obj = {
+      name: book.name,
+      publisher: book.publisher,
+      cover_state: book.cover_state,
+      publish_date: book.publish_date
+    }
     add_label
     stored_books.push(book_obj)
     update_data('books', stored_books)
