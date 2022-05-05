@@ -1,7 +1,9 @@
 require_relative './src/apps/book_app'
+require_relative './src/game_list_methods'
 
 class Main
   include AppBook
+  include GameListMethods
 
   def list_of_options
     puts

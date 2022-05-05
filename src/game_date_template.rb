@@ -4,33 +4,33 @@ module GameDateTemplate
   end
 
   def choose_year
-    prints 'Year: '
+    print 'Year: '
     year = gets.chomp.to_i
     while year < 1900 || year > Time.new.year
-      prints "Year must be between 1900 and #{Time.new.year}"
-      prints 'Year: '
+      print "Year must be between 1900 and #{Time.new.year}"
+      print 'Year: '
       year = gets.chomp.to_i
     end
     year
   end
 
   def choose_month
-    prints 'Month: '
+    print 'Month: '
     month = gets.chomp.to_i
     while month < 1 || month > 12
-      prints 'Month must be between 1 and 12'
-      prints 'Month: '
+      print 'Month must be between 1 and 12'
+      print 'Month: '
       month = gets.chomp.to_i
     end
     month
   end
 
   def choose_day
-    prints 'Day: '
+    print 'Day: '
     day = gets.chomp.to_i
     while day < 1 || day > 31
-      prints 'Day must be between 1 and 31'
-      prints 'Day: '
+      print 'Day must be between 1 and 31'
+      print 'Day: '
       day = gets.chomp.to_i
     end
     day
