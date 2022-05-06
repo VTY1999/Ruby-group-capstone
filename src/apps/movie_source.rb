@@ -21,11 +21,8 @@ module AppMovie
 
   def add_movie
     @movies << new_movie
-    puts 'Movie Created'
-  end
-
-  def save_data
     create_movie
+    puts 'Movie Created'
   end
 
   def list_all_sources
