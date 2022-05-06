@@ -1,6 +1,6 @@
-require_relative './apps/store_data'
-require_relative './game'
-require_relative './author'
+require_relative '../../data/data_crud'
+require_relative '../game'
+require_relative '../author'
 require_relative './game_date_template'
 
 module GameListMethods

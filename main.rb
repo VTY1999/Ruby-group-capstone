@@ -1,5 +1,5 @@
 require_relative './src/apps/book_app'
-require_relative './src/game_list_methods'
+require_relative './src/apps/game_list_methods'
 
 class Main
   include AppBook

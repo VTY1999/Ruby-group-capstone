@@ -1,9 +1,11 @@
 [  {
-    "publisher" : "knady",
-    "cover_state" : "marc",
-    "publish_date" : "2022"
+    "name" : "kandu",
+    "publisher" : "Monalisa",
+    "cover_state" : "bad",
+    "publish_date" : "bad"
   },  {
+    "name" : "kandy",
     "publisher" : "Isaac",
-    "cover_state" : "MAN",
-    "publish_date" : "2034-02-23"
+    "cover_state" : "Versimo",
+    "publish_date" : "Versimo"
   }]

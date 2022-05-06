@@ -18,3 +18,20 @@ CREATE TABLE games(
   PRIMARY KEY (id),
   FOREIGN KEY (author_id) REFERENCES authors(id)
 );
+
+--- Create database for book and item --------
+
+CREATE TABLE labels(
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  color VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE books(
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  publisher VARCHAR(100) NOT NULL,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN,
+   CONSTRAINT FK_bookId FOREIGN KEY(id) REFERENCES labels(id)
+);
