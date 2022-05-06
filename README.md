@@ -1,46 +1,38 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Catalog of my things
 
-> Description the project.
+> This is an app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. 
 
+# Project Presentation
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- Ruby
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy up and running follow these steps.
 
+1. Clone the repo
 
-To get a local copy up and running follow these simple example steps.
+   ```
+   https://github.com/VTY1999/Ruby-group-capstone.git
+   ```
 
-### Prerequisites
+2. Go to project directory `cd ruby-group-capstone`
 
-### Setup
-
-### Install
-
-### Usage
+3. Run the project using `ruby main.rb` in terminal
 
 ### Run tests
 
-### Deployment
+> for running the tests:
 
+1. Install project requirements `bundle install`
 
+2. Run the test using `rspec` in terminal
 
-## Authors
-
-## Authors
 
 👤 **Francis Verissimo**
 
