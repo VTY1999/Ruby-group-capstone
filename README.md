@@ -57,7 +57,7 @@ To get a local copy up and running follow these steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/VTY1999/Ruby-group-capstone/issues).
 
 ## Show your support
 
@@ -65,9 +65,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Hat tip to [Microverse](https://bit.ly/MicroverseTN) for providing the project requirements and for the distribution of tasks.
+
 
 ## 📝 License
 
