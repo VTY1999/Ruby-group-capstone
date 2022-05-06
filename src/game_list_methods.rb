@@ -1,19 +1,30 @@
 require_relative './game'
-require_relative './game_date_template'
+require_relative './author'
+require_relative '../data/authors/author_crud'
 require_relative '../data/games/game_crud'
+require_relative './game_date_template'
 
 module GameListMethods
-  include SaveData
+  include SaveGameData
+  include SaveAuthorData
   include GameDateTemplate
 
   def list_all_authors
-    authors = read_games('authors')
+    # authors = read_games('authors')
     authors.each do |author|
       puts "id: #{author.id} name: '#{author.first_name} #{author.last_name}'"
     end
   end
 
   def list_of_games
+    if @authors.empty?
+      @authors.push(Author.new('Stephen', 'King'))
+      @authors.push(Author.new('Nuri', 'Lacka'))
+      @authors.push(Author.new('Mugisha', 'Samuel'))
+      @authors.push(Author.new('Pedro', 'Guerreiro'))
+      save_authors(@authors)
+    end
+
     puts 'List of all games:'
     puts 'Database is empty. Add a game' if @games.empty?
     @games.each do |game|
@@ -27,6 +38,14 @@ module GameListMethods
 
   # rubocop:disable Metrics/MethodLength
   def add_game
+    if @authors.empty?
+      @authors.push(Author.new('Stephen', 'King'))
+      @authors.push(Author.new('Nuri', 'Lacka'))
+      @authors.push(Author.new('Mugisha', 'Samuel'))
+      @authors.push(Author.new('Pedro', 'Guerreiro'))
+      save_authors(@authors)
+    end
+
     puts 'Add a game'
     print 'Enter Game Name: '
     name = gets.chomp

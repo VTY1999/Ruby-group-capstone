@@ -1,4 +1,4 @@
-module SaveData
+module SaveGameData
   def save_games(games)
     game_store = games.map do |game|
       {
@@ -22,10 +22,10 @@ module SaveData
   def read_games(authors)
     games_array = []
     if File.exist?('./data/games/games.json')
-      games = JSON.parse(File.read('./data/games/games.json'))
+      games = JSON.parse(File.read('../data/games/games.json'))
       games.each do |game|
         game_item = Gane.new(game['name'], Time.at(game['date']), game['multiplayer'],
-                            Time.at(game['last_played_at']), game['archived'], game['id'])
+                                  Time.at(game['last_played_at']), game['archived'], game['id'])
 
         authors.each do |author|
           game_item.author = author if author.id == game['author_id']
