@@ -40,7 +40,7 @@ CREATE TABLE books(
 CREATE TABLE movies (
   id  INT,
   silet BOOLEAN,
-  FOREIGN KEY(id) REFERENCES item(id)
+  FOREIGN KEY(id) REFERENCES sources(id)
 );
 
 CREATE TABLE sources (
