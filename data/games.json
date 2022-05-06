@@ -1,0 +1,22 @@
+[  {
+    "name" : "Super Mario",
+    "date" : "2000-03-03 00:00:00 +0100",
+    "multiplayer" : true,
+    "last_played_at" : "2006-03-31 00:00:00 +0100",
+    "archived" : false,
+    "author" : "Isaac Samuel "
+  },  {
+    "name" : "Killer bean",
+    "date" : "2000-02-02 00:00:00 +0100",
+    "multiplayer" : true,
+    "last_played_at" : "2022-02-03 00:00:00 +0100",
+    "archived" : false,
+    "author" : "Kandi Kamuntu "
+  },  {
+    "name" : "Mortal Combat",
+    "date" : "2012-04-04 00:00:00 +0100",
+    "multiplayer" : true,
+    "last_played_at" : "2021-04-04 00:00:00 +0100",
+    "archived" : false,
+    "author" : "Verissimo Francis "
+  }]
