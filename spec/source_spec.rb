@@ -1,11 +1,21 @@
 require './src/source'
 
-describe 'Testing source method' do
-  it 'Should add item to source' do
-    source = Source.new(name: 'HBO')
-    item = double('item')
-    allow(item).to receive(:add_source)
-    source.add_item item
-    expect(source.items.count).to eq 1
+describe Source do
+  context 'When instantiated' do
+    before(:all) do
+      @source = Source.new('HBO')
+    end
+
+    it 'Should be an instance of class Source' do
+      expect(@source).to be_an_instance_of Source
+    end
+
+    it 'Should return name' do
+      expect(@source.name).to eq 'HBO'
+    end
+
+    it 'Should return []' do
+      expect(@source.items).to eq []
+    end
   end
 end

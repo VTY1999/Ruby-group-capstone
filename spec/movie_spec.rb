@@ -1,10 +1,12 @@
 require './src/movie'
 require 'date'
 
-describe 'Testing Movie methods' do
-  it 'should be archived if it\'s silent' do
-    movie = Movie.new(silent: true, published_date: DateTime.parse('2022-10-16'))
-    movie.move_to_archive
-    expect(movie.move_to_archive).to be true
+describe Movie do
+  before(:all) do
+    @movie = Movie.new(true, '2020/12/9')
+  end
+
+  it 'Movie class' do
+    expect(@movie).to be_an_instance_of(Movie)
   end
 end
