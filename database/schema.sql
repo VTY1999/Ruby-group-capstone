@@ -35,3 +35,16 @@ CREATE TABLE books(
   archived BOOLEAN,
   CONSTRAINT FK_bookId FOREIGN KEY(id) REFERENCES labels(id)
 );
+
+
+CREATE TABLE movies (
+  id  INT,
+  silet BOOLEAN,
+  FOREIGN KEY(id) REFERENCES sources(id)
+);
+
+CREATE TABLE sources (
+  id  INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(100),
+  PRIMARY KEY(id)
+);
