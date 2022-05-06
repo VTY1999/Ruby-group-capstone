@@ -22,7 +22,7 @@ module Data
     File.write("./data/#{file}.json", data_format)
   end
 
-  def render_book(file)
+  def render_data(file)
     path = "./data/#{file}.json"
     File.exist?(path)
     File.write(path, '[]') if File.empty?(path)

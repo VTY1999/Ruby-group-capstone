@@ -1,51 +1,48 @@
+require_relative './apps/store_data'
 require_relative './game'
 require_relative './author'
-require_relative '../data/authors/author_crud'
-require_relative '../data/games/game_crud'
 require_relative './game_date_template'
 
 module GameListMethods
-  include SaveGameData
-  include SaveAuthorData
+  include Data
   include GameDateTemplate
 
   def list_all_authors
-    # authors = read_games('authors')
+    authors = render_data('authors')
     authors.each do |author|
-      puts "id: #{author.id} name: '#{author.first_name} #{author.last_name}'"
+      puts "id: #{author['id']} name: '#{author['first_name']} #{author['last_name']}'"
     end
   end
 
   def list_of_games
-    if @authors.empty?
-      @authors.push(Author.new('Stephen', 'King'))
-      @authors.push(Author.new('Nuri', 'Lacka'))
-      @authors.push(Author.new('Mugisha', 'Samuel'))
-      @authors.push(Author.new('Pedro', 'Guerreiro'))
-      save_authors(@authors)
-    end
-
+    all_games = render_data('games')
     puts 'List of all games:'
-    puts 'Database is empty. Add a game' if @games.empty?
-    @games.each do |game|
+    puts 'Database is empty. Add a game' if all_games.empty?
+    all_games.each do |game|
       puts
-      print "id: #{game.id} Name: '#{game.name}', Date: #{game.publish_date.strftime('%Y/%m/%d')}, "
-      print "Multiplayer: #{game.multiplayer}, Last_played_at: #{game.last_played_at.strftime('%Y/%m/%d')}, "
-      print "Author: '#{game.author.first_name} #{game.author.last_name}'"
+      print " Name: '#{game['name']}', Author: '#{game['author']}', Publish_date: #{game['date']} "
+      print " Multiplayer: #{game['multiplayer']}, Last_played_at: #{game['last_played_at']} "
+      # print "Author: '#{game['author.first_name']} #{game['author.last_name']}'"
     end
     puts ' '
   end
 
+  def add_author
+    my_authors = fetch_data('authors')
+    puts 'Add author'
+    input = inp(%w[First-Name Last-Name Id])
+    p input
+    author = Author.new(input[0], input[1], input[2])
+    author_obj = { first_name: author.first_name, last_name: author.last_name, id: author.id }
+    my_authors.push(author_obj)
+    update_data('authors', my_authors)
+    puts 'Author created Successfully'
+    author
+  end
+
   # rubocop:disable Metrics/MethodLength
   def add_game
-    if @authors.empty?
-      @authors.push(Author.new('Stephen', 'King'))
-      @authors.push(Author.new('Nuri', 'Lacka'))
-      @authors.push(Author.new('Mugisha', 'Samuel'))
-      @authors.push(Author.new('Pedro', 'Guerreiro'))
-      save_authors(@authors)
-    end
-
+    my_games = fetch_data('games')
     puts 'Add a game'
     print 'Enter Game Name: '
     name = gets.chomp
@@ -61,13 +58,18 @@ module GameListMethods
     month_last = gets.chomp.to_i
     print 'Enter last played day between 1-31: '
     day_last = gets.chomp.to_i
-    puts 'Pick an index for the game author: '
-    @authors.each_with_index { |author, index| puts "#{index}) name: #{author.first_name} #{author.last_name}"}
-    author_index = gets.chomp.to_i
     new_game = Game.new(name, Time.new(year, month, date), multiplayer, Time.new(year_last, month_last, day_last))
-    new_game.author = @authors[author_index]
-    @games.push(new_game)
-    save_games(@games)
+    game_author = add_author
+    game_obj = {
+      name: new_game.name,
+      date: new_game.publish_date,
+      multiplayer: new_game.multiplayer,
+      last_played_at: new_game.last_played_at,
+      archived: new_game.archived,
+      author: "#{game_author.first_name} #{game_author.last_name} "
+    }
+    my_games.push(game_obj)
+    update_data('games', my_games)
     puts 'Game added'
   end
   # rubocop:enable Metrics/MethodLength

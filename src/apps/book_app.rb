@@ -15,7 +15,7 @@ module AppBook
   end
 
   def list_all_books
-    books = render_book('books')
+    books = render_data('books')
     puts('There is no book yet') if books.empty?
     books.each_with_index do |book, index|
       puts(
@@ -37,7 +37,7 @@ module AppBook
   end
 
   def list_all_labels
-    labels = render_book('labels')
+    labels = render_data('labels')
     puts('There is no lable yet') if labels.empty?
     labels.each_with_index do |label, index|
       puts(

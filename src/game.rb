@@ -1,10 +1,10 @@
 require './src/item'
 
 class Game < Item
-  attr_accessor :multiplayer, :last_played_at
+  attr_accessor :multiplayer, :last_played_at, :name
 
   def initialize(name, publish_date, multiplayer, last_played_at)
-    super(name, publish_date, archived, id)
+    super(name, publish_date)
     @id = Random.rand(1...1000)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
