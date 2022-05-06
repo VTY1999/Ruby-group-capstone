@@ -33,5 +33,5 @@ CREATE TABLE books(
   publisher VARCHAR(100) NOT NULL,
   publish_date DATE NOT NULL,
   archived BOOLEAN,
-   CONSTRAINT FK_bookId FOREIGN KEY(id) REFERENCES labels(id)
+  CONSTRAINT FK_bookId FOREIGN KEY(id) REFERENCES labels(id)
 );

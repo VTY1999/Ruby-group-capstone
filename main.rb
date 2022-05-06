@@ -2,7 +2,6 @@ require_relative './src/apps/book_app'
 require_relative './src/apps/movie_source'
 require_relative './src/apps/game_list_methods'
 
-
 class Main
   include AppBook
   include AppMovie
