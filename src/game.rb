@@ -1,7 +1,7 @@
 require './src/item'
 
 class Game < Item
-  attr_accessor :multiplayer, :last_played_at
+  attr_accessor :multiplayer, :last_played_at, :name
 
   def initialize(name, publish_date, multiplayer, last_played_at)
     super(name, publish_date)
