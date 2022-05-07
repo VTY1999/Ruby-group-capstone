@@ -5,7 +5,7 @@
 > This app help you to keep a record of different types of things you won: books, music albums, movies, and games. 
 
 # Project Presentation
-[Video](https://drive.google.com/file/d/1ZAu8zxPNCcYqfgXCJnXbAUk7_fXEQkg1/view)
+[Video](https://drive.google.com/file/d/1rk81fBTgOjVMLSHoG2LxPxBUhPLEAEYe/view?usp=sharing)
 
 ## Built With
 
