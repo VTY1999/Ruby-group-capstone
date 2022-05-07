@@ -1,7 +1,7 @@
 [  {
-    "title" : "Book",
-    "color" : "Green"
-  },  {
-    "title" : "Moon",
-    "color" : "red"
-  }]
+  "title" : "Book",
+  "color" : "Green"
+},  {
+  "title" : "Moon",
+  "color" : "red"
+}]
