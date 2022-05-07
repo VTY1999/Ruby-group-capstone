@@ -21,8 +21,18 @@ module AppMovie
 
   def add_movie
     @movies << new_movie
+    add_source
     create_movie
     puts 'Movie Created'
+  end
+
+  def add_source
+    input = inp(['name'])
+    stored_source = fetch_data('source')
+    source = Source.new(input[0])
+    source_obj = { name: source.name }
+    stored_source.push(source_obj)
+    update_data('source', stored_source)
   end
 
   def list_all_sources
